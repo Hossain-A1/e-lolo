@@ -1,11 +1,20 @@
 import { getProduct } from "@/prisma/controllers";
+import { currencyConverter } from "@/utils/currencyConverter";
+import { useSession } from "next-auth/react";
 import Image from "next/image";
 import { useRouter } from "next/router";
 
 const ProductItems = ({ product }) => {
+  const {data:session} = useSession()
   const router = useRouter();
+
   const handleEnroll = () => {
-    router.push(`/checkout/${product.id}`);
+    if(session){
+      router.push(`/checkout/${product.id}`);
+    }else{
+      router.push(`/users/login?destination=/checkout/${product.id}`);
+
+    }
   };
 
   return (
@@ -55,7 +64,7 @@ const ProductItems = ({ product }) => {
                 <span className="text-violet-600 font-medium text-lg">
                   Price:
                 </span>{" "}
-                {product.price}
+                {currencyConverter(product.price)}
               </p>
             </div>
           </div>
@@ -64,12 +73,12 @@ const ProductItems = ({ product }) => {
             <span className="text-violet-600 font-medium text-lg">
               Description:
             </span>{" "}
-            {product.description.substring(0, 100)}...
+            {product.description.substring(0, 100)}
           </p>
 
           <button
             onClick={handleEnroll}
-            className="btn btn-info mt-3 w-28 text-violet-950 font-semibold"
+            className="bg-teal-500 hover:bg-teal-600 duration-300 py-3 rounded-lg mt-3 text-violet-950  font-semibold w-full text-center"
           >
             Buy now
           </button>

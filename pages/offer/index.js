@@ -1,25 +1,74 @@
-import SectionTitle from "@/components/SectionTitle";
+// Import Swiper React components
+import { Swiper, SwiperSlide } from "swiper/react";
+import OfferItem from "@/components/OfferItem";
+import {  getProducts } from "@/prisma/controllers";
 
-const Offeer = () => {
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+
+// import required modules
+import {
+  Navigation,
+  Pagination,
+  Mousewheel,
+  Keyboard,
+  Autoplay,
+} from "swiper/modules";
+
+const Offeer = ({ products }) => {
   return (
-    <div className="offer wrapper py-10">
-       <div className="flex flex-col justify-center items-center gap-2">
-     <h2 className="text-violet-300 uppercase font-semibold text-xl text-center tracking-widest">Offer products</h2>
-   
-
-      <SectionTitle desc="Lorem, ipsum dolor sit amet consectetur adipisicing elit.."/>
-     </div>
-
-     <div className="slider">
-      
-     </div>
-
-     <div className="card-wrapper">
-    
+    <div className="offer wrapper section-p">
+      <div className="flex flex-col justify-center items-center gap-2">
+        <h2 className="text-violet-300 uppercase font-semibold text-xl text-center tracking-widest">
+          Offer products
+        </h2>
+        <p className="text-gray-400 text-center">
+          This offer is for a limited time only, so don't miss out! Get it now
+          and enjoy the great savings. Take advantage of this incredible deal
+          today!
+        </p>
       </div>
-   
-    </div>
-  )
-}
 
-export default Offeer
+      <div className="slider">
+        <Swiper
+          autoplay={true}
+          loop={true}
+          cssMode={true}
+          navigation={true}
+          pagination={true}
+          mousewheel={true}
+          keyboard={true}
+          modules={[Navigation, Pagination, Mousewheel, Keyboard, Autoplay]}
+          className="mySwiper"
+        >
+          {products &&
+            products.map((product) => (
+              <SwiperSlide key={product.id}>
+                <OfferItem
+                  product={product}
+                  photo={product.image}
+                  alt={product.title}
+                />
+              </SwiperSlide>
+            ))}
+        </Swiper>
+      </div>
+
+      <div className="card-wrapper"></div>
+    </div>
+  );
+};
+
+export default Offeer;
+
+export const getServerSideProps = async () => {
+  const products = await getProducts();
+
+  return {
+    props: {
+      products,
+    },
+  };
+};

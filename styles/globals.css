@@ -6,3 +6,27 @@
   @apply container mx-auto px-5 lg:px-0;
 }
 
+.section-p{
+  @apply py-10 md:py-12
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: rgb(52, 50, 50) !important;
+  background-color: rgb(249, 243, 243) !important;
+  padding: 1.5rem !important;
+  border-radius: 50% !important;
+  text-shadow: 1rem lavender;
+  
+
+}
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  background-color: rgb(219, 219, 215) !important;
+}
+.swiper-pagination-bullet {
+  background-color: rgb(254, 254, 254) !important;
+}
+.swiper-pagination-bullet-active {
+  background-color: rgb(7, 114, 144) !important;
+}

@@ -1,3 +1,4 @@
+import { currencyConverter } from "@/utils/currencyConverter";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -49,7 +50,7 @@ const ProductItems = ({ product }) => {
                 <span className="text-violet-600 font-medium text-lg">
                   Price:
                 </span>{" "}
-                {product.price}
+                {currencyConverter(product.price)}
               </p>
             </div>
           </div>
@@ -58,12 +59,12 @@ const ProductItems = ({ product }) => {
             <span className="text-violet-600 font-medium text-lg">
               Description:
             </span>{" "}
-            {product.description.substring(0, 100)}...
+            {product.description.substring(0, 50)}...
           </p>
 
           <Link
             href={`/products/${product.id}`}
-            className="btn btn-info mt-3 w-28 text-violet-950 font-semibold"
+            className="btn btn-info mt-3 w-36 text-violet-950 font-semibold"
           >
             View details
           </Link>
