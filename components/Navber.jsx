@@ -143,7 +143,7 @@ const Navber = () => {
           ) : (
             <Link
               href='/users/login'
-              className=' max-sm:hidden btn btn-primary text-gray-900'
+              className=' max-sm:hidden btn btn-info text-gray-900'
             >
               sing in
             </Link>

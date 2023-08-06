@@ -74,7 +74,7 @@ const Contact = () => {
             id="name"
             required
             placeholder="Inter your name."
-            className="py-4 px-6 lg:w-[60%] w-full bg-violet-900/30 outline-none focus:outline-violet-700 duration-300 rounded "
+            className="py-4 px-6 lg:w-[60%] w-full bg-violet-500/30 outline-none focus:outline-violet-700 duration-300 rounded "
           />
         </div>
         <div className="flex  gap-9   items-center">
@@ -89,7 +89,7 @@ const Contact = () => {
             id="email"
             required
             placeholder="Inter your email."
-            className="py-4 px-6 lg:w-[60%] w-full bg-violet-900/30 outline-none focus:outline-violet-700 duration-300 rounded"
+            className="py-4 px-6 lg:w-[60%] w-full bg-violet-500/30 outline-none focus:outline-violet-700 duration-300 rounded"
           />
         </div>
         <div className="flex  gap-4   items-center">
@@ -104,7 +104,7 @@ const Contact = () => {
             id="address"
             required
             placeholder="Inter your address."
-            className="py-4 px-6 lg:w-[60%] w-full bg-violet-900/30 outline-none focus:outline-violet-700 duration-300 rounded"
+            className="py-4 px-6 lg:w-[60%] w-full bg-violet-500/30 outline-none focus:outline-violet-700 duration-300 rounded"
           />
         </div>
         <div className="flex  gap-3  items-center">
@@ -119,7 +119,7 @@ const Contact = () => {
             id="message"
             required
             placeholder="Message"
-            className="h-[8rem] px-6 lg:w-[60%] py-2 w-full bg-violet-900/30 outline-none focus:outline-violet-700 duration-300 rounded resize-none"
+            className="h-[8rem] px-6 lg:w-[60%] py-2 w-full bg-violet-500/30 outline-none focus:outline-violet-700 duration-300 rounded resize-none"
           />
         </div>
         <div className="flex justify-start  text-center ">
@@ -161,9 +161,9 @@ const Contact = () => {
           width="300"
           height="300"
           style={{border:0}}
-          allowfullscreen=""
+          allowFullScreen=""
           loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
+          referrerPolicy="no-referrer-when-downgrade"
         ></iframe>
       </div>
       </div>
