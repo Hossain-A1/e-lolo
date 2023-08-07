@@ -1,8 +1,8 @@
-import Link from "next/link";
 import { cva } from "class-variance-authority";
 import clsx from "clsx";
+import Link from "next/link";
 
-const buttonVariance = cva(
+const buttonVariants = cva(
   "px-6 py-3 duration-300 rounded-xl",
 
   {
@@ -15,16 +15,21 @@ const buttonVariance = cva(
         transparent:
           "bg-transparent border font-semibold rounded-lg w-full text-center text-white hover:bg-gray-500/10",
       },
+      size: {
+        default: "py-3 px-6",
+        full: "py-3 w-[50%]",
+      },
     },
     defaultVariants: {
       color: "dark",
+      size:'default'
     },
   }
 );
 
-const Button = ({ href, placeholder, color }) => {
+const Button = ({ href, placeholder, color,size }) => {
   return (
-    <Link href={href} className={clsx(buttonVariance({ color }))}>
+    <Link className={clsx(buttonVariants({ color,size}))} href={href}>
       {placeholder}
     </Link>
   );

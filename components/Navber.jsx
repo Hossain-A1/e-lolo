@@ -107,6 +107,12 @@ const Navber = () => {
             offer
           </Link>
           <Link
+            href='/orders'
+            className='nav-link  capitalize text-gray-300 hover:text-gray-200 duration-300 font-medium'
+          >
+            orders
+          </Link>
+          <Link
             href='/about'
             className='nav-link  capitalize text-gray-300 hover:text-gray-200 duration-300 font-medium'
           >

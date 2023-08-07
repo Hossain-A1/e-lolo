@@ -28,3 +28,26 @@ model Offers {
   price Float
   rating Float
 }
+
+
+model User {
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+  email String @unique
+
+  orders Order[]
+}
+
+model Order {
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+  transactionId String
+  amountTotal Float
+  name String
+  phone String
+  address String
+  productTitle String
+  productId String
+
+  userId String @db.ObjectId
+  user User @relation(fields: [userId], references: [id] )
+
+}

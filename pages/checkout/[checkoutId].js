@@ -46,6 +46,7 @@ const Checkout = ({ product }) => {
       address: formData.address,
       phone: formData.phone,
       productTitle: formData.productTitle,
+      productId:product.id
     });
 
     // redirect to stripe payment//
