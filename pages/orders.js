@@ -5,7 +5,6 @@ import { useRouter } from "next/router";
 import { useEffect } from "react";
 
 const OrdersPage = ({ session, consumer }) => {
-  console.log(consumer.orders);
   const router = useRouter();
 
   useEffect(() => {
@@ -68,7 +67,7 @@ export const getServerSideProps = async (context) => {
     },
   });
 
-  if (!session) {
+  if (!session || !consumer) {
     return {
       redirect: {
         destination: "/users/login",

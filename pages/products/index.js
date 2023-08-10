@@ -9,7 +9,7 @@ const Products = ({ products }) => {
         title=" Our product is tailored to meet your exact needs."
         desc=" Our product is designed to be customizable and flexible. You can choose the features and functions that are most important to you, and we'll create a product that meets those specific needs. We also offer personalized customer service, so that you can get the help you need when you need it.."
       />
-      <div className='products-container grid lg:grid-cols-2 grid-cols-1 gap-2'>
+      <div className='products-container grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-5'>
         {products &&
           products.map((product) => (
             <ProductItems key={product.id} product={product} />

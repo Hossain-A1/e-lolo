@@ -26,6 +26,7 @@ const ProductItems = ({ product }) => {
             alt={product.title}
             width={640}
             height={360}
+            priority
             className=" w-full h-full object-cover"
           />
         </div>
