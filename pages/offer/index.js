@@ -47,7 +47,6 @@ const Offeer = ({ products }) => {
             products.map((product) => (
               <SwiperSlide key={product.id}>
                 <OfferItem
-                  product={product}
                   photo={product.image}
                   alt={product.title}
                 />

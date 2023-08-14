@@ -1,5 +1,6 @@
 import Footer from "@/components/Footer";
 import Navber from "@/components/Navber";
+
 import "@/styles/globals.css";
 import "react-toastify/dist/ReactToastify.css";
 import { SessionProvider } from "next-auth/react";

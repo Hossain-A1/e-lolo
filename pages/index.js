@@ -1,9 +1,11 @@
 import { getProducts } from "@/prisma/controllers";
 import Products from "./products";
 
+
 const HomePage = ({products}) => {
-  return <div >
+  return <div  className="wrapper section-p">
     <Products products={products}/>
+    
   </div>;
 };
 

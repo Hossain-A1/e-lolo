@@ -77,7 +77,7 @@ const Contact = () => {
             className="py-4 px-6 lg:w-[60%] w-full bg-violet-500/30 outline-none focus:outline-violet-700 duration-300 rounded "
           />
         </div>
-        <div className="flex  gap-9   items-center">
+        <div className="flex  gap-8   items-center">
           <label htmlFor="email" className="text-gray-300 font-semibold ">
             Email:{" "}
           </label>
@@ -107,7 +107,7 @@ const Contact = () => {
             className="py-4 px-6 lg:w-[60%] w-full bg-violet-500/30 outline-none focus:outline-violet-700 duration-300 rounded"
           />
         </div>
-        <div className="flex  gap-3  items-center">
+        <div className="flex  gap-3 ">
           <label htmlFor="message" className="text-gray-300 font-semibold ">
             Message:{" "}
           </label>
